@@ -6,7 +6,6 @@ import ChemistryCalculator.backend.Titration;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 
 
@@ -69,7 +68,7 @@ public class TitrationPanel extends JPanel {
         clearButton.setText("Clear");
         clearButton.setAutoscrolls(true);
         clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        clearButton.addActionListener(this::clearButtonActionPerformed);
+        clearButton.addActionListener(evt5 -> clearButtonActionPerformed());
 
         getUnknownValueButton.setBackground(MAIN_COLOR);
         getUnknownValueButton.setFont(SEGOE_UI);
@@ -77,7 +76,7 @@ public class TitrationPanel extends JPanel {
         getUnknownValueButton.setText("Get unknown value");
         getUnknownValueButton.setAutoscrolls(true);
         getUnknownValueButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        getUnknownValueButton.addActionListener(this::getUnknownValueButtonActionPerformed);
+        getUnknownValueButton.addActionListener(evt4 -> getUnknownValueButtonActionPerformed());
 
         acidMolarityUnitComboBox.setFont(SEGOE_UI);
         acidMolarityUnitComboBox.setForeground(MAIN_COLOR);
@@ -91,7 +90,7 @@ public class TitrationPanel extends JPanel {
                         "nanomolars"
                 }));
         acidMolarityUnitComboBox.setSelectedIndex(0);
-        acidMolarityUnitComboBox.addActionListener(this::acidMolarityUnitComboBoxActionPerformed);
+        acidMolarityUnitComboBox.addActionListener(evt3 -> acidMolarityUnitComboBoxActionPerformed());
         acidMolarityUnitComboBox.addItemListener(this::acidMolarityUnitComboBoxItemStateChanged);
 
         baseMolarityUnitComboBox.setFont(SEGOE_UI);
@@ -106,7 +105,7 @@ public class TitrationPanel extends JPanel {
                         "nanomolars"
                 }));
         baseMolarityUnitComboBox.setSelectedIndex(0);
-        baseMolarityUnitComboBox.addActionListener(this::baseMolarityUnitComboBoxActionPerformed);
+        baseMolarityUnitComboBox.addActionListener(evt2 -> baseMolarityUnitComboBoxActionPerformed());
         baseMolarityUnitComboBox.addItemListener(this::baseMolarityUnitComboBoxItemStateChanged);
 
         baseVolumeUnitComboBox.setFont(SEGOE_UI);
@@ -123,7 +122,7 @@ public class TitrationPanel extends JPanel {
                 }
         ));
         baseVolumeUnitComboBox.setSelectedIndex(1);
-        baseVolumeUnitComboBox.addActionListener(this::baseVolumeUnitComboBoxActionPerformed);
+        baseVolumeUnitComboBox.addActionListener(evt1 -> baseVolumeUnitComboBoxActionPerformed());
         baseVolumeUnitComboBox.addItemListener(this::baseVolumeUnitComboBoxItemStateChanged);
 
         acidVolumeUnitComboBox.setFont(SEGOE_UI);
@@ -140,7 +139,7 @@ public class TitrationPanel extends JPanel {
                 }
         ));
         acidVolumeUnitComboBox.setSelectedIndex(1);
-        acidVolumeUnitComboBox.addActionListener(this::acidVolumeUnitComboBoxActionPerformed);
+        acidVolumeUnitComboBox.addActionListener(evt -> acidVolumeUnitComboBoxActionPerformed());
         acidVolumeUnitComboBox.addItemListener(this::acidVolumeUnitComboBoxItemStateChanged);
 
         labelForAcidMoleTextfield.setFont(SEGOE_UI);
@@ -263,7 +262,7 @@ public class TitrationPanel extends JPanel {
         );
     }
 
-    private void getUnknownValueButtonActionPerformed(ActionEvent evt) {
+    private void getUnknownValueButtonActionPerformed() {
         // TODO add your handling code here:
       String molarityOfAcid = null, molarityOfBase = null, volumeOfAcid = null, volumeOfBase = null;
         try {
@@ -414,7 +413,7 @@ public class TitrationPanel extends JPanel {
 
     }
 
-    private void clearButtonActionPerformed(ActionEvent evt) {
+    private void clearButtonActionPerformed() {
         // TODO add your handling code here:
         acidMolarityTextfield.setText(null);
         baseMolarityTextfield.setText(null);
@@ -443,7 +442,7 @@ public class TitrationPanel extends JPanel {
         }
     }
 
-    private void acidMolarityUnitComboBoxActionPerformed(ActionEvent evt) {
+    private void acidMolarityUnitComboBoxActionPerformed() {
         // TODO add your handling code here:
         String molarityOfAcid = acidMolarityTextfield.getText();
         String convertedValue;
@@ -479,7 +478,7 @@ public class TitrationPanel extends JPanel {
         }
     }
 
-    private void acidVolumeUnitComboBoxActionPerformed(ActionEvent evt) {
+    private void acidVolumeUnitComboBoxActionPerformed() {
         // TODO add your handling code here:
         String volumeOfAcid = acidVolumeTextfield.getText();
         String convertedValue;
@@ -515,7 +514,7 @@ public class TitrationPanel extends JPanel {
         }
     }
 
-    private void baseMolarityUnitComboBoxActionPerformed(ActionEvent evt) {
+    private void baseMolarityUnitComboBoxActionPerformed() {
         // TODO add your handling code here:
         String molarityOfBase = baseMolarityTextfield.getText();
         String convertedValue;
@@ -552,7 +551,7 @@ public class TitrationPanel extends JPanel {
         }
     }
 
-    private void baseVolumeUnitComboBoxActionPerformed(ActionEvent evt) {
+    private void baseVolumeUnitComboBoxActionPerformed() {
         // TODO add your handling code here:
         String volumeOfBase = baseVolumeTextfield.getText();
         String convertedValue;

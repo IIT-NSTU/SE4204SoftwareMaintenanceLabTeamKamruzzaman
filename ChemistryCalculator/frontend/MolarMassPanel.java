@@ -7,7 +7,6 @@ import ChemistryCalculator.backend.InvalidAtomException;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.util.Arrays;
 
 public class MolarMassPanel extends JPanel {
@@ -82,7 +81,7 @@ public class MolarMassPanel extends JPanel {
         getMolarMassButton.setText("Get Molar mass");
         getMolarMassButton.setAutoscrolls(true);
         getMolarMassButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        getMolarMassButton.addActionListener(this::molarMassButtonActionPerformed);
+        getMolarMassButton.addActionListener(evt1 -> molarMassButtonActionPerformed());
 
         additionalText1.setFont(SEGOE_UI);
         additionalText1.setForeground(MAIN_COLOR);
@@ -102,7 +101,7 @@ public class MolarMassPanel extends JPanel {
         clearButton.setText("Clear");
         clearButton.setAutoscrolls(true);
         clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        clearButton.addActionListener(this::molerMassClearButtonActionPerformed);
+        clearButton.addActionListener(evt -> molerMassClearButtonActionPerformed());
 
         compoundAnsLabel.setFont(SEGOE_UI);
         compoundAnsLabel.setForeground(new Color(0, 102, 102));
@@ -203,7 +202,7 @@ public class MolarMassPanel extends JPanel {
                                 .addGap(29, 29, 29))
         );
     }
-    private void molarMassButtonActionPerformed(ActionEvent evt) {
+    private void molarMassButtonActionPerformed() {
         // TODO add your handling code here:
         String compoundText = compoundTextfield.getText();
         if (!compoundText.isEmpty()) {
@@ -255,7 +254,7 @@ public class MolarMassPanel extends JPanel {
         }
     }
 
-    private void molerMassClearButtonActionPerformed(ActionEvent evt) {
+    private void molerMassClearButtonActionPerformed() {
         // TODO add your handling code here:
         errorMessagePanel.setVisible(false);
         compoundTextfield.setText(null);

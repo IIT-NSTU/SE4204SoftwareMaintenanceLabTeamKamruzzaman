@@ -3,7 +3,6 @@ package ChemistryCalculator.frontend;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -70,7 +69,7 @@ public class HistoryFrame extends JFrame {
     }
 
 
-    private void initComponents() throws IOException {
+    private void initComponents() {
         mainPanel.setBackground(Color.white);
         mainScrollPane.setBorder(null);
 
@@ -86,7 +85,7 @@ public class HistoryFrame extends JFrame {
         clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
         clearButton.addActionListener(actionEvent -> {
             try {
-                clearButtonActionPerformed(actionEvent);
+                clearButtonActionPerformed();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -111,7 +110,7 @@ public class HistoryFrame extends JFrame {
         setTitle("Equation Balance - History");
     }
 
-    private void clearButtonActionPerformed(ActionEvent actionEvent) throws IOException {
+    private void clearButtonActionPerformed() throws IOException {
         File file= new File(filePath);
         PrintWriter writer = new PrintWriter(file);
         writer.print("");

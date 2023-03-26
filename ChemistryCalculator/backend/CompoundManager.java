@@ -8,36 +8,12 @@ public class CompoundManager {
     private final ArrayList<ArrayList<Integer>> elementMatrix = new ArrayList<>();
     private final HashMap<Atom, Integer> atomList = new HashMap<>();
 
-    public CompoundManager(String compound, int index, int side) {
-        this.compoundDecipher(compound, index, side);
-    }
-
     public CompoundManager(String compound) {
-        this.compoundDecipher(compound, 0, 1);
-    }
-
-    public CompoundManager(Compound compound, int index, int side) {
-        this.compoundDecipher(compound.getCompound(), index, side);
-    }
-
-    public CompoundManager(Compound compound) {
-        this.compoundDecipher(compound.getCompound(), 0, 1);
-    }
-
-    public void append(String compound) {
         this.compoundDecipher(compound, 0, 1);
     }
 
     public void append(String compound, int index, int side) {
         this.compoundDecipher(compound, index, side);
-    }
-
-    public void append(Compound compound) {
-        this.compoundDecipher(compound.getCompound(), 0, 1);
-    }
-
-    public void append(Compound compound, int index, int side) {
-        this.compoundDecipher(compound.getCompound(), index, side);
     }
 
 
@@ -72,8 +48,6 @@ public class CompoundManager {
                 }
             }
             findAtoms(eachCompound, index, multiplier, side);
-            //System.out.println("before finding element");
-            //System.out.println(eachCompound + "  " + index + "  " + multiplier + "  " + side);
         }
     }
 

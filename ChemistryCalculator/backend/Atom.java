@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Atom {
     private static final HashMap<String, String[]> allAtoms = new Database().getAllAtoms();
-    private final Orbitals orbitals = new Orbitals(this);
+    private final Orbitals orbitals = new Orbitals();
     private String symbol;
     private String name;
     private  double atomicMass;

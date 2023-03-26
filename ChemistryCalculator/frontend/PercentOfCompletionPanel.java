@@ -46,7 +46,7 @@ public class PercentOfCompletionPanel extends JPanel {
         getPercentOfCompletionButton.setText("Percent of completion");
         getPercentOfCompletionButton.setAutoscrolls(true);
         getPercentOfCompletionButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        getPercentOfCompletionButton.addActionListener(this::pcom_ans_buttonActionPerformed);
+        getPercentOfCompletionButton.addActionListener(evt2 -> pcom_ans_buttonActionPerformed());
 
         ansTableScrollPane.setVisible(false);
 
@@ -87,7 +87,7 @@ public class PercentOfCompletionPanel extends JPanel {
         pieChartButton.setText("See pie chart");
         pieChartButton.setAutoscrolls(true);
         pieChartButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        pieChartButton.addActionListener(this::pcom_pie_chart_buttonActionPerformed);
+        pieChartButton.addActionListener(evt1 -> pcom_pie_chart_buttonActionPerformed());
 
         errorMessagePanel.setBackground(Color.red);
         errorMessagePanel.setVisible(false);
@@ -103,7 +103,7 @@ public class PercentOfCompletionPanel extends JPanel {
         clearButton.setText("Clear");
         clearButton.setAutoscrolls(true);
         clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        clearButton.addActionListener(this::pcom_clear_buttonActionPerformed);
+        clearButton.addActionListener(evt -> pcom_clear_buttonActionPerformed());
     }
 
     private void setComponentLayout() {
@@ -170,7 +170,7 @@ public class PercentOfCompletionPanel extends JPanel {
 
     }
 
-    private void pcom_ans_buttonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void pcom_ans_buttonActionPerformed() {
         // TODO add your handling code here:
         String compound_text = compoundTextfield.getText();
         if (!compound_text.isEmpty()) {
@@ -218,7 +218,7 @@ public class PercentOfCompletionPanel extends JPanel {
 
     }
 
-    private void pcom_clear_buttonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void pcom_clear_buttonActionPerformed() {
         // TODO add your handling code here:
         ansTableScrollPane.setVisible(false);
         pieChartButton.setVisible(false);
@@ -226,7 +226,7 @@ public class PercentOfCompletionPanel extends JPanel {
         compoundTextfield.setText(null);
     }
 
-    private void pcom_pie_chart_buttonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void pcom_pie_chart_buttonActionPerformed() {
         // TODO add your handling code here:
         FxPieChart pieChart = new FxPieChart(dataTableModel.getDataVector());
         pieChart.toFront();

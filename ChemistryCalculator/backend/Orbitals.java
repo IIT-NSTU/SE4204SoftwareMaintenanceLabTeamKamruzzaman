@@ -1,11 +1,6 @@
 package ChemistryCalculator.backend;
 
 public class Orbitals {
-    private final Atom atom;
-
-    public Orbitals(Atom atom) {
-        this.atom = atom;
-    }
 
     public String getElectronConfig(int atomicNumber) {
 

@@ -45,7 +45,7 @@ public class ElectronConfigPanel extends JPanel {
         getElectronConfigButton.setText("Get Config.");
         getElectronConfigButton.setAutoscrolls(true);
         getElectronConfigButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        getElectronConfigButton.addActionListener(this::getElectronConfigButtonActionPerformed);
+        getElectronConfigButton.addActionListener(evt1 -> getElectronConfigButtonActionPerformed());
 
         ansPanel.setBackground(new Color(85, 65, 118));
         ansPanel.setBorder(BorderFactory.createEtchedBorder());
@@ -95,7 +95,7 @@ public class ElectronConfigPanel extends JPanel {
         clearButton.setText("Clear");
         clearButton.setAutoscrolls(true);
         clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        clearButton.addActionListener(this::clearButtonActionPerformed);
+        clearButton.addActionListener(evt -> clearButtonActionPerformed());
     }
 
     private void setComponentLayout() {
@@ -203,7 +203,7 @@ public class ElectronConfigPanel extends JPanel {
         );
     }
 
-    private void getElectronConfigButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void getElectronConfigButtonActionPerformed() {
         // TODO add your handling code here:
         String atom_text = numOrSymbolTextfield.getText();
 
@@ -260,7 +260,7 @@ public class ElectronConfigPanel extends JPanel {
     }
 
 
-    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void clearButtonActionPerformed() {
         // TODO add your handling code here:
         ansPanel.setVisible(false);
         errorMessagePanel.setVisible(false);

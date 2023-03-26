@@ -154,7 +154,7 @@ public class ConcentrationPanel extends JPanel {
         normalityCheckBox.setFont(SEGOE_UI);
         normalityCheckBox.setForeground(MAIN_COLOR);
         normalityCheckBox.setText("Normality");
-        normalityCheckBox.addActionListener(this::normalityCheckBoxActionPerformed);
+        normalityCheckBox.addActionListener(evt2 -> normalityCheckBoxActionPerformed());
 
         getConcentrationButton.setBackground(MAIN_COLOR);
         getConcentrationButton.setFont(SEGOE_UI);
@@ -162,7 +162,7 @@ public class ConcentrationPanel extends JPanel {
         getConcentrationButton.setText("Get Concentration");
         getConcentrationButton.setAutoscrolls(true);
         getConcentrationButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        getConcentrationButton.addActionListener(this::getConcentrationButtonActionPerformed);
+        getConcentrationButton.addActionListener(evt1 -> getConcentrationButtonActionPerformed());
 
         clearButton.setBackground(MAIN_COLOR);
         clearButton.setFont(SEGOE_UI);
@@ -170,7 +170,7 @@ public class ConcentrationPanel extends JPanel {
         clearButton.setText("Clear");
         clearButton.setAutoscrolls(true);
         clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        clearButton.addActionListener(this::clearButtonActionPerformed);
+        clearButton.addActionListener(evt -> clearButtonActionPerformed());
     }
 
     private void setComponentLayout() {
@@ -316,7 +316,7 @@ public class ConcentrationPanel extends JPanel {
         );
     }
 
-    private void getConcentrationButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void getConcentrationButtonActionPerformed() {
         // TODO add your handling code here:
         String compound_text = compoundTextfield.getText();
         String givenCompoundMass_text = massTextfield.getText();
@@ -396,7 +396,7 @@ public class ConcentrationPanel extends JPanel {
 
     }
 
-    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void clearButtonActionPerformed() {
         // TODO add your handling code here:
         compoundTextfield.setText(null);
         massTextfield.setText(null);
@@ -412,7 +412,7 @@ public class ConcentrationPanel extends JPanel {
         ansPanel.setVisible(false);
     }
 
-    private void normalityCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {
+    private void normalityCheckBoxActionPerformed() {
         // TODO add your handling code here:
         equivalentNumTextfield.setEnabled(normalityCheckBox.isSelected());
     }

@@ -21,16 +21,8 @@ public class Fraction {
         return numerator;
     }
 
-    public void setNumerator(int numerator) {
-        this.numerator = numerator;
-    }
-
     public int getDenominator() {
         return denominator;
-    }
-
-    public void setDenominator(int denominator) {
-        this.denominator = denominator;
     }
 
     //computing the greatest common divisor.Example => (3 , 6)  == 3

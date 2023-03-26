@@ -66,7 +66,7 @@ public class EquationBalancePanel extends JPanel {
         balanceButton.setText("Balance");
         balanceButton.setAutoscrolls(true);
         balanceButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        balanceButton.addActionListener(this::balanceButtonActionPerformed);
+        balanceButton.addActionListener(evt2 -> balanceButtonActionPerformed());
 
         historyButton.setBackground(MAIN_COLOR);
         historyButton.setFont(SEGOE_UI);
@@ -74,7 +74,7 @@ public class EquationBalancePanel extends JPanel {
         historyButton.setText("History");
         historyButton.setAutoscrolls(true);
         historyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        historyButton.addActionListener(this::historyButtonActionPerformed);
+        historyButton.addActionListener(evt1 -> historyButtonActionPerformed());
 
         clearButton.setBackground(MAIN_COLOR);
         clearButton.setFont(SEGOE_UI); // NOI18N
@@ -82,7 +82,7 @@ public class EquationBalancePanel extends JPanel {
         clearButton.setText("Clear");
         clearButton.setAutoscrolls(true);
         clearButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        clearButton.addActionListener(this::clearButtonActionPerformed);
+        clearButton.addActionListener(evt -> clearButtonActionPerformed());
 
         ansPanel.setBackground(MAIN_COLOR_LITE);
         ansPanel.setVisible(false);
@@ -228,7 +228,7 @@ public class EquationBalancePanel extends JPanel {
 
 
 
-    private void balanceButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void balanceButtonActionPerformed() {
         // TODO add your handling code here:
         String reactants = reactantsTextfield.getText();
         String products = productsTextfield.getText();
@@ -260,7 +260,7 @@ public class EquationBalancePanel extends JPanel {
     }
 
 
-    private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void historyButtonActionPerformed() {
         // TODO add your handling code here:
         HistoryFrame history;
         try {
@@ -277,7 +277,7 @@ public class EquationBalancePanel extends JPanel {
         history.requestFocus();
     }
 
-    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void clearButtonActionPerformed() {
         // TODO add your handling code here:
         reactantsTextfield.setText(null);
         productsTextfield.setText(null);
