@@ -1,3 +1,8 @@
+# SE4204
+[SRS](https://github.com/IIT-NSTU/SE4204SoftwareMaintenanceLabTeamKamruzzaman/blob/main/SRS_of_ChemCal_07_08_09_29_35.pdf)
+[Refactoring Report](https://github.com/IIT-NSTU/SE4204SoftwareMaintenanceLabTeamKamruzzaman/blob/main/Refactoring_Report_07_08_09_29_35.pdf)
+
+
 
 # Chemistry Calculator
 Its a desktop based application which  provides facility for solving  equations and problems related to Electron Combination, Molarity, Mass, Percent of Composition, Balance Reaction, molecular mass, titration setup etc
